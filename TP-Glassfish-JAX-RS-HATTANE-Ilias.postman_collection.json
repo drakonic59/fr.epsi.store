@@ -1,0 +1,281 @@
+{
+	"info": {
+		"_postman_id": "ee7df5e1-8cbe-45f7-96bb-ebfd64114692",
+		"name": "TP-Glassfish-JAX-RS-HATTANE-Ilias",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add data to fake database",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"detail\": \"Details of product one\",\r\n        \"image\": \"http://www.images.com/image.png\",\r\n        \"info\": \"Informations about product one\",\r\n        \"name\": \"ArtistProduct\",\r\n        \"price\": 200.0,\r\n        \"quantity\": 5\r\n    },\r\n    {\r\n        \"detail\": \"Details of product two\",\r\n        \"image\": \"http://www.images.com/image2.png\",\r\n        \"info\": \"Informations about product two\",\r\n        \"name\": \"MusicalProduct\",\r\n        \"price\": 200.0,\r\n        \"quantity\": 5\r\n    },\r\n    {\r\n        \"detail\": \"Details of product three\",\r\n        \"image\": \"http://www.images.com/image3.png\",\r\n        \"info\": \"Informations about product three\",\r\n        \"name\": \"WorldProduct\",\r\n        \"price\": 200.0,\r\n        \"quantity\": 5\r\n    },\r\n    {\r\n        \"detail\": \"Details of product four\",\r\n        \"image\": \"http://www.images.com/image4.png\",\r\n        \"info\": \"Informations about product four\",\r\n        \"name\": \"AnyProduct\",\r\n        \"price\": 200.0,\r\n        \"quantity\": 5\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/t/products",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"t",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all data from api",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/t/products",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"t",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a product by his ID (id=1)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/t/product/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"t",
+						"product",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[ERROR] Get a product by his ID (id=5)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/t/product/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"t",
+						"product",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a product (id=1)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"detail\": \"UPDATED Details of product one\",\r\n    \"id\": 1,\r\n    \"image\": \"UPDATED http://www.images.com/image.png\",\r\n    \"info\": \"UPDATED Informations about product one\",\r\n    \"name\": \"UPDATED ArtistProduct\",\r\n    \"price\": 250.0,\r\n    \"quantity\": 50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/t/product/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"t",
+						"product",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[ERROR] Update a product (id=5)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"detail\": \"UPDATED Details of product one\",\r\n    \"id\": 5,\r\n    \"image\": \"UPDATED http://www.images.com/image.png\",\r\n    \"info\": \"UPDATED Informations about product one\",\r\n    \"name\": \"UPDATED ArtistProduct\",\r\n    \"price\": 250.0,\r\n    \"quantity\": 50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/t/product/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"t",
+						"product",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a product (id=2)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/t/product/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"t",
+						"product",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[ERROR] Delete a product (id=5)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/t/product/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"t",
+						"product",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search a product by a string (\"World\")",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/t/product/search/World",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"t",
+						"product",
+						"search",
+						"World"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buy 5 products (id=1)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/t/product/buy/1/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"t",
+						"product",
+						"buy",
+						"1",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[ERROR] Buy 5000 products (id=1)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/t/product/buy/1/5000",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"t",
+						"product",
+						"buy",
+						"1",
+						"5000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[ERROR] Buy 5000 products (id=5)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/t/product/buy/5/5000",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"t",
+						"product",
+						"buy",
+						"5",
+						"5000"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
